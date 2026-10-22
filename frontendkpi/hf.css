@@ -1,0 +1,624 @@
+
+/* ==========================================
+   KRISHNA PAINTS INDUSTRIES
+   COMMON CSS: HEADER + NAVBAR + FOOTER
+   DESKTOP + TABLET + MOBILE
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap');
+
+
+/* ==========================================
+   1. GLOBAL STYLES
+========================================== */
+
+:root {
+    --navy: #123451;
+    --navy-dark: #0a2339;
+    --blue: #245b80;
+    --gold: #d6a449;
+--lightblue: #c6e0f9;
+    --white: #ffffff;
+    --background: #f4f7fa;
+    --text: #243447;
+    --muted: #657587;
+    --border: #e0e7ed;
+
+    --shadow: 0 8px 24px rgba(18, 52, 81, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family: 'Roboto', sans-serif;
+    color: var(--text);
+    background: var(--background);
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Roboto Slab', serif;
+    color: var(--navy);
+    line-height: 1.3;
+}
+
+p {
+    margin-bottom: 14px;
+}
+
+
+/* ==========================================
+   2. HEADER
+========================================== */
+
+.header {
+    position: relative;
+    z-index: 10;
+
+    background:rgb(1, 23, 82);
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: 0 3px 12px rgba(18, 52, 81, 0.05);
+}
+
+.header > h1 {
+    width: min(1200px, 92%);
+    min-height: 125px;
+
+    margin: 0 auto;
+    padding: 20px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    color: var(--navy);
+    font-family: 'Roboto Slab', serif;
+    font-size: clamp(25px, 3.5vw, 43px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -1px;
+    color:white;
+   
+}
+
+.header > h1 img {
+    width: 86px;
+    height: 86px;
+
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+
+/* ==========================================
+   3. NAVIGATION BAR - DESKTOP
+========================================== */
+
+.nav {
+    min-height: 66px;
+
+    padding: 0 4%;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    background: rgb(1, 23, 82);
+    border-top: 1px solid var(--border);
+}
+
+/* Nav toggle checkbox - hidden */
+.nav-toggle {
+    display: none;
+}
+
+/* Hamburger button - hidden on desktop */
+.hamburger {
+    display: none;
+}
+
+/* Nav menu - behaves as direct children on desktop */
+.nav-menu {
+    display: contents;
+}
+
+.nav a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 17px 22px;
+   
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    transition: color 0.25s ease;
+}
+
+/* Gold underline */
+
+.nav a::after {
+    content: '';
+
+    position: absolute;
+    left: 22px;
+    right: 22px;
+    bottom: 9px;
+
+    height: 2px;
+    background: var(--gold);
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.25s ease;
+}
+
+.nav a:hover {
+    color: var(--blue);
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.nav a:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: -3px;
+}
+
+
+/* ==========================================
+   4. COMMON PAGE WIDTH
+========================================== */
+
+.container,
+.main,
+.product-section {
+    width: min(1200px, 92%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ==========================================
+   5. FOOTER
+========================================== */
+
+.footer {
+    margin-top: 65px;
+    padding: 35px 4%;
+
+    text-align: center;
+    color: #eaf1f7;
+
+    background: var(--navy-dark);
+    border-top: 4px solid var(--gold);
+}
+
+.footer p {
+    margin: 5px 0;
+    line-height: 1.7;
+}
+
+.footer a {
+    color: #f2c66d;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   6. GENERAL BUTTONS
+========================================== */
+
+button,
+.button {
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   7. TABLET / MOBILE NAVIGATION RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .header > h1 {
+        min-height: 90px;
+        padding: 16px 0;
+        gap: 14px;
+
+        font-size: clamp(23px, 4.5vw, 32px);
+        letter-spacing: -0.5px;
+    }
+
+    .header > h1 img {
+        width: 64px;
+        height: 64px;
+    }
+
+    /* Mobile Navbar Container */
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        min-height: auto;
+        padding: 10px 4%;
+        background: var(--white);
+        border-top: 1px solid var(--border);
+    }
+
+    /* Hamburger Button - visible on mobile / small screens */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        align-self: flex-end;
+        width: 44px;
+        height: 44px;
+        padding: 9px 8px;
+        background: #f4f7fa;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .hamburger:hover,
+    .hamburger:focus-visible {
+        background: #e8edf2;
+        border-color: var(--blue);
+        outline: none;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 22px;
+        height: 2.5px;
+        background: var(--navy);
+        border-radius: 2px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    /* Animate Hamburger to X when open / checked */
+    .nav-toggle:checked ~ .hamburger .bar:nth-child(1),
+    .hamburger.open .bar:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .nav-toggle:checked ~ .hamburger .bar:nth-child(2),
+    .hamburger.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle:checked ~ .hamburger .bar:nth-child(3),
+    .hamburger.open .bar:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    /* Nav menu hidden by default on mobile */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 6px;
+        padding: 10px 0 4px;
+    }
+
+    /* Nav menu shown when checked */
+    .nav-toggle:checked ~ .nav-menu,
+    .nav-menu.active {
+        display: flex;
+        animation: navSlideDown 0.25s ease forwards;
+    }
+
+    .nav a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: 42px;
+        padding: 10px 16px;
+        font-size: 14.5px;
+        font-weight: 700;
+        text-align: center;
+        color: var(--navy);
+        background: #f4f7fa;
+        border: 1px solid #e8edf2;
+        border-radius: 8px;
+        transition:
+            background 0.2s ease,
+            color 0.2s ease,
+            border-color 0.2s ease;
+    }
+
+    .nav a::after {
+        display: none;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+        color: var(--white);
+        background: var(--navy);
+        border-color: var(--navy);
+        outline: none;
+    }
+
+    .footer {
+        margin-top: 45px;
+    }
+}
+
+@keyframes navSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   8. MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 480px) {
+
+    /* Mobile header */
+
+    .header > h1 {
+        width: 92%;
+        min-height: 70px;
+
+        padding: 14px 0;
+        gap: 12px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: clamp(20px, 5.2vw, 25px);
+        line-height: 1.25;
+        letter-spacing: -0.5px;
+    }
+
+    .header > h1 img {
+        width: 54px;
+        height: 54px;
+
+        flex-shrink: 0;
+        object-fit: contain;
+    }
+
+
+    /* Common page widths */
+
+    .container,
+    .main,
+    .product-section {
+        width: 92%;
+    }
+
+
+    /* Footer */
+
+    .footer {
+        margin-top: 36px;
+        padding: 24px 5%;
+        font-size: 13.5px;
+    }
+
+    .footer p {
+        margin: 4px 0;
+    }
+}
+
+
+/* ==========================================
+   9. EXTRA SMALL MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+
+    .header > h1 {
+        font-size: 18px;
+        gap: 8px;
+        min-height: 60px;
+        padding: 10px 0;
+    }
+
+    .header > h1 img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .nav {
+        padding: 8px 3%;
+    }
+
+    .hamburger {
+        width: 40px;
+        height: 40px;
+        padding: 8px 7px;
+    }
+
+    .hamburger .bar {
+        width: 20px;
+        height: 2px;
+    }
+
+    .nav-toggle:checked ~ .hamburger .bar:nth-child(1),
+    .hamburger.open .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-toggle:checked ~ .hamburger .bar:nth-child(3),
+    .hamburger.open .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .nav a {
+        min-height: 38px;
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .container,
+    .main,
+    .product-section {
+        width: 94%;
+    }
+
+    .footer {
+        padding: 20px 4%;
+        font-size: 12.5px;
+    }
+}
+
+
+
+/* ==========================================
+   10. STICKY WHATSAPP BUTTON (ALL PAGES)
+========================================== */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    
+    width: 60px;
+    height: 60px;
+    
+    border-radius: 50%;
+    box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.2);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    text-decoration: none;
+    cursor: pointer;
+    
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6), 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.whatsapp-float:focus-visible {
+    outline: 3px solid #123451;
+    outline-offset: 3px;
+}
+
+.whatsapp-float img,
+.whatsapp-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    display: block;
+    transition: transform 0.25s ease;
+}
+
+.whatsapp-float:hover img,
+.whatsapp-float:hover .whatsapp-icon {
+    transform: scale(1.05);
+}
+
+/* Subtle continuous pulse ring */
+.whatsapp-float::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #25D366;
+    opacity: 0.6;
+    z-index: -1;
+    animation: whatsappPulse 2.4s infinite cubic-bezier(0.24, 0, 0.38, 1);
+}
+
+@keyframes whatsappPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 52px;
+        height: 52px;
+    }
+}

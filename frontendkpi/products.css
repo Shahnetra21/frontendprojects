@@ -1,0 +1,381 @@
+
+/* =========================================
+   KRISHNA PAINTS INDUSTRIES - PRODUCTS PAGE
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+.main{
+    background: linear-gradient(to right, #dfe9f7, #e0e7ed);
+}
+body {
+    margin: 0;
+    background: #f4f7fa;
+    color: #183247;
+    font-family: "Roboto", Arial, sans-serif;
+}
+
+/* Main section */
+
+.product-section {
+    width: 92%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 55px 0 75px;
+}
+
+.product-section h1 {
+    margin: 0 0 14px;
+    text-align: center;
+    color: #123451;
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: clamp(30px, 4vw, 44px);
+    font-weight: 700;
+}
+
+.product-section > p {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    text-align: center;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Slider layout */
+
+.product-slider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+/* ALL PRODUCTS IN ONE ROW */
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 22px;
+
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 10px 4px 20px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+/* Product cards */
+
+.product-card {
+    flex: 0 0 calc((100% - 44px) / 3);
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+    border: 1px solid #e2e8ef;
+    border-radius: 14px;
+    overflow: hidden;
+
+    box-shadow: 0 5px 18px rgba(18, 52, 81, 0.07);
+
+    scroll-snap-align: start;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(18, 52, 81, 0.13);
+}
+
+/* Product images */
+
+.product-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+
+    padding: 18px;
+    object-fit: contain;
+
+    background: #ffffff;
+    border-bottom: 1px solid #edf0f4;
+}
+
+/* Product titles */
+
+.product-card h2,
+.product-card h3 {
+    margin: 20px 20px 10px;
+
+    color: #123451;
+    font-family: "IBM Plex Serif", Georgia, serif;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Product descriptions */
+
+.product-card p {
+    margin: 0 20px 22px;
+
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Product links/buttons */
+
+.product-card a {
+    display: inline-block;
+    align-self: flex-start;
+
+    margin: auto 20px 22px;
+    padding: 11px 18px;
+
+    background: #123451;
+    color: #ffffff;
+
+    border: 1px solid #123451;
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.product-card a:hover {
+    background: #ffffff;
+    color: #123451;
+}
+
+/* Scrollbar */
+
+.product-container::-webkit-scrollbar {
+    height: 7px;
+}
+
+.product-container::-webkit-scrollbar-track {
+    background: #e5eaf0;
+    border-radius: 10px;
+}
+
+.product-container::-webkit-scrollbar-thumb {
+    background: #123451;
+    border-radius: 10px;
+}
+
+.product-container::-webkit-scrollbar-thumb:hover {
+    background: #245b80;
+}
+
+/* Previous and next buttons */
+
+.prev-button,
+.next-button {
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    color: #123451;
+
+    border: 1px solid #dce5ed;
+    border-radius: 50%;
+
+    font-size: 23px;
+    line-height: 1;
+
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.prev-button:hover,
+.next-button:hover {
+    background: #123451;
+    color: #ffffff;
+}
+
+/* Tablet */
+
+@media (max-width: 850px) {
+    .product-section {
+        width: 94%;
+        padding: 45px 0 60px;
+    }
+
+    .product-slider {
+        gap: 9px;
+    }
+
+    .product-container {
+        gap: 14px;
+    }
+
+    .product-card {
+        flex-basis: calc((100% - 28px) / 3);
+    }
+
+    .product-card img {
+        height: 170px;
+        padding: 12px;
+    }
+
+    .product-card h2 {
+        margin: 16px 12px 8px;
+        font-size: 17px;
+    }
+
+    .product-card p {
+        margin: 0 12px 18px;
+        font-size: 13px;
+    }
+
+    .product-card a {
+        margin: auto 12px 16px;
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    .prev-button,
+    .next-button {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+        font-size: 19px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 560px) {
+    .product-section {
+        width: 92%;
+        padding: 30px 0 45px;
+    }
+
+    .product-section h1 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+
+    .product-section > p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 22px;
+    }
+
+    .product-slider {
+        gap: 8px;
+    }
+
+    .product-container {
+        gap: 12px;
+        padding-bottom: 15px;
+    }
+
+    /* One card visible at a time on mobile */
+    .product-card {
+        flex: 0 0 100%;
+        border-radius: 12px;
+    }
+
+    .product-card img {
+        height: 180px;
+        padding: 14px;
+    }
+
+    .product-card h2,
+    .product-card h3 {
+        margin: 16px 16px 8px;
+        font-size: 18px;
+    }
+
+    .product-card p {
+        margin: 0 16px 18px;
+        font-size: 13.5px;
+        line-height: 1.6;
+    }
+
+    .product-card a {
+        margin: auto 16px 18px;
+    }
+
+    .prev-button,
+    .next-button {
+        flex: 0 0 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+}
+
+/* Extra small mobile */
+
+@media (max-width: 400px) {
+    .product-section {
+        width: 94%;
+        padding: 22px 0 35px;
+    }
+
+    .product-section h1 {
+        font-size: 23px;
+        margin-bottom: 6px;
+    }
+
+    .product-section > p {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .product-slider {
+        gap: 6px;
+    }
+
+    .product-container {
+        gap: 8px;
+        padding-bottom: 10px;
+    }
+
+    .prev-button,
+    .next-button {
+        flex: 0 0 28px;
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+    }
+
+    .product-card img {
+        height: 150px;
+        padding: 10px;
+    }
+
+    .product-card h2,
+    .product-card h3 {
+        margin: 12px 12px 6px;
+        font-size: 16px;
+    }
+
+    .product-card p {
+        margin: 0 12px 14px;
+        font-size: 12.5px;
+    }
+}
